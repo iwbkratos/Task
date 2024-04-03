@@ -1,0 +1,39 @@
+#menu{
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: 80px;
+    line-height: 80px;
+    text-align: end;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr)) ;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding-top: 5px;
+}
+.list{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 100%;
+    height: 100px;
+    
+}
+.list>span{
+    height: 100%;
+    line-height: 50%;
+}
+.job-content{
+    color: black;
+}
+body{
+    background-color: whitesmoke;
+}
+.content{
+    padding-left: 10px;
+}
+.list>img{
+    border-radius: 8px;
+}
