@@ -5,28 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./list.css">
+    
 </head>
 <body>
+ 
   <header id="header"></header>
   <nav id="navbar">
+    <div id="menu-container">
     <div id="menu">
         <div id="search-input">
         <input id="input" type="text">
         <div id="space"> </div>
-        <button type="submit">search</button>
+        <button id="search" type="submit">search</button>
         </div>
     </div>
-  <!-- <span>
-  <label for="page">Choose limit</label>
-  <select  name="page" id="page">
-    <option value="10">10</option>
-    <option value="15">15</option>
-    <option value="20">20</option>
-  </select>
-</span> -->
+  </div>
+    <div id="dropmenu">
+      <span id="dropmenu-container">
+    <div class="dropdown">
+      <button id="select-limit">choose limit
+        <select name="count-limit" id="count-limit" onchange="cardcount()">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </button>
+    </div>
+  </span>
+  </div>
   </nav>
     <div id="container">
-    <div id="" class="list">
+    <div id="meta" class="list">
         <img id="meta-image1" src="data:image/png;base64,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" alt="" width="100px" height="100px">
         <span class="content">
         <p class="job-content">Software Engineer</p>
@@ -195,5 +204,13 @@
     </span>
     </div>
 </div>
+<footer id="pagination">
+  <div class="pages">
+    <button>&laquo;</button>
+    <button>&raquo;</button>
+  </div>
+</footer>
+
+<script src="./list.js"></script>
 </body>
 </html>

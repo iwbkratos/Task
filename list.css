@@ -1,27 +1,43 @@
-#id{
-    border: 1px solid black;
-    height: 10px;
-    width: 70%;
-    
-}
+
 body{
     background-color: rgb(207, 210, 213);
 }
 nav{
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    /* border: 1px solid hsla(180, 1%, 66%, 0.906); */
     display: flex;
-    /* border: 1px solid black; */
+    border-radius: 10px;
    width: 100%;
-   
+   padding-top: 10px;
+   /* padding-bottom: 5px; */
+   box-shadow:1.5px 1.5px 5px rgb(196, 194, 194) ;
+   background-color: whitesmoke;
+}
+#menu-container{
+    /* border: 1px solid black; */
+    width: 100%;
 }
 #menu{
     display: flex;
-    width: 25%;
+    width: 50%;
     height: 60px;
-    /* padding-top: 10px; */
     border-radius: 100px;
+   
      box-shadow: 0px 0px 1px rgba(199, 200, 202, 0.2), 0px 1px 5px 0.5px rgba(186, 186, 188, 0.79);
 }
-
+#dropmenu{
+    
+    display: inline;
+    width: 30%;
+    padding-left:10%;
+}
+#dropmenu-container{
+    display: block;
+    border-radius: 30px;
+    /* padding-left: 5px; */
+}
 #search-input{
     width: 100%;
     /* border: 1px solid black;  */
@@ -91,10 +107,10 @@ button,input{
     padding-left: 10px;
     display: inline;
 }
-button{
+#search{
     background-color: whitesmoke;
 }
-button:hover{
+#search:hover{
     scale: 1.05;
     border-color: rgb(152, 150, 150);
 }
@@ -102,10 +118,56 @@ input:hover{
     scale: 1.05;
     border-color: rgb(152, 150, 150);
 }
-#limit{
+nav>span{
 
-    /* border: 1px solid black; */
-    display: contents;
-    border-radius: 10px;
-    padding-top: 3px;
+    padding-top: 10px;
+    z-index: 1;
+    padding-left: 50%;
 }
+
+.dropdown{
+    padding: 18px 100px;
+}
+
+.dropdown>button{
+    background-color: white;
+    size: 20px;
+    width: 150px;
+    height: 30px;
+}
+nav{
+    position: sticky;
+    top: 3px;
+    z-index: 1;
+}
+footer{
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    height: 60px;
+    position: sticky;
+    bottom: 3px;
+    display: flex;
+    padding: px;
+}
+footer>div{
+   /* border: 1px solid red; */
+   /* display: flex; */
+   padding-left: 50%;
+   padding-top: 15px;
+}
+footer>div>button{
+    /* border: 1px solid rgb(222, 219, 219); */
+    border-radius: 5px ;
+    font-size: x-large;
+    padding-bottom: 30px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+footer>div>button:hover{
+      /* background-color: rgb(10, 10, 10); */
+      color: white;
+}
+
+/* #meta{
+    display: none;
+} */
