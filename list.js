@@ -1,26 +1,67 @@
-// document.getElementById("meta").style.display="none";
 
-// function cardcount()
-// {
-//  const e=document.getElementById("count-limit");
-//   const val=Number(e.value);
-//  let num=val
-//   console.log(val);
-//  demo(num);
-// }
+let limit=20;
+let list=document.querySelectorAll(".list");
+let currentpage=1;
 
-// function demo(num)
-// {
-//   let val=Math.ceil(20/num)
+function run()
+{
+  document.getElementById("pgno").style.display="";
+  limit=document.getElementById("count-limit").value;
+  load();
+}
+ 
+ console.log(limit);
+ 
+function load()
+{
+  let starting=limit*(currentpage-1)
+  let ending=limit*currentpage-1;
+  for(let i=0;i<list.length;i++)
+  {
+        if( i>=starting&&i<=ending)
+        {
+            list[i].style.display="";
+        }
+        else
+        {
+          list[i].style.display="none";
+        }
+  }
+ listpage();
+}
+load();
 
-//   while(val>0)
-//   {
-//            createPage();
-//            val--;
-//   }
-// }
+function listpage()
+{
+  const count=Math.ceil(list.length/limit);
+  document.getElementById("pgno").innerHTML="";
+  if(currentpage!=1)
+  {
+    let newSpan=document.createElement('span');
+      newSpan.innerHTML="&laquo";
+      newSpan.setAttribute('onclick',"changePage("+(currentpage-1)+")");
+      document.getElementById('pgno').appendChild(newSpan);
+  }
+  for(let i=1;i<=count;i++)
+  {
+    let newSpan=document.createElement('span');
+       newSpan.innerHTML=i;
+       newSpan.setAttribute('onclick','changePage('+i+')');
+       document.getElementById('pgno').appendChild(newSpan);
+  }
+  if(currentpage!=count)
+  {
+    let newSpan=document.createElement('span');
+      newSpan.innerHTML="&raquo";
+      newSpan.setAttribute('onclick',"changePage("+(currentpage+1)+")");
+      document.getElementById('pgno').appendChild(newSpan);
+  }
+}
+function changePage(i)
+{
+  currentpage=i;
+  load();
+}
 
-// function createPage()
-// {
-//     var  htmldoc=document.implementation.createHTMLDocument("new page");
-// }
+
+
