@@ -11,6 +11,7 @@
  
   <header id="header"></header>
   <nav id="navbar">
+    
     <div id="menu-container">
     <div id="menu">
         <div id="search-input">
@@ -30,8 +31,11 @@
           <option value="20" selected>20</option>
         </select>
       </button>
+      <div id="logout" onclick="deleteCookie()"><a href="./login.html">logout</a></div>
     </div>
+    
   </span>
+  
   </div>
   </nav>
     <div id="container">
@@ -210,7 +214,21 @@
     </span>
   </div>
 </footer>
+<script>
+  function deleteCookie()
+{
+  let cookiename=getUsername();
+  let cookies=document.cookie.split(";");
+  for(let i=0;i<cookies.length;i++)
+  {
+      if(cookies[i].trim().startsWith(cookiename))
+      {
+        document.cookie = cookiename + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      }
+  }
+}
 
+</script>
 <script src="./list.js"></script>
 <script src="./searchlist.js"></script>
 </body>
