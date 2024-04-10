@@ -5,6 +5,7 @@ let currentpage=1;
 
 function run()
 {
+  
   document.getElementById("pgno").style.display="";
   limit=document.getElementById("count-limit").value;
   load();
@@ -63,5 +64,20 @@ function changePage(i)
   load();
 }
 
+function getUsername()
+{
+     let exusername= localStorage.getItem("username1");
+     return String(exusername);
+}
 
-
+function deleteCookie()
+{
+  let cookiename=getUsername();
+  // let cookies=document.cookie.split(";");
+  // console.log(cookiename);
+  let date=new Date();
+  date.setTime(date.setTime(2020, 3, 10));
+    
+        document.cookie= 'username=;'+date.toUTCString()+';path=/';
+        document.cookie = 'userpassword=;'+date.toUTCString()+';path=/';
+}
