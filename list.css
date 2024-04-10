@@ -6,7 +6,6 @@ nav{
     margin: 0;
     height: 80px;
     width: 100%;
-    
     display: flex;
     border-radius: 10px;
    width: 100%;
@@ -29,14 +28,12 @@ nav{
     
     display: inline;
     width: 30%;
-    padding-left:10%;
+    /* padding-left:10%; */
 }
 .dropdown>button *{
     font-size: medium;
 }
-.dropdown>button{
-   font-size: medium;
-}
+
 #dropmenu-container{
     display: block;
     border-radius: 30px;
@@ -47,10 +44,23 @@ nav{
     padding-top: 16.5px;
     padding-left: 15%;
 }
+
 #count-limit{
     border: 1px solid rgb(209, 208, 208);
     border-radius: 5px;
 }
+
+#logout{
+    padding-left: 120%;
+
+}
+#logout>a{
+    text-decoration:underline;
+}
+#logout>a:hover{
+    color: red;
+}
+
 #container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr)) ;
