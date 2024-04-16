@@ -1,0 +1,99 @@
+
+#company-name{
+    border: 2px solid rgb(23, 195, 18);
+    background-color:  #000000;
+    color:  rgb(23, 195, 18);
+    font-size: 50px;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 20px 20px;
+    font-family:"Audiowide", sans-serif;
+    margin-top: -5px;
+}
+#container{
+    display:flex;
+    justify-content: center;
+
+}
+#signup{
+    padding-left: 60px;
+    padding-bottom: 15px;
+    font-size: 19px;
+    color: rgb(0, 0, 0);
+}
+input{
+    border: none ;
+    border-radius: 3px;
+    padding: 5px 5px;
+}
+#adjust{
+   
+    padding-top: 10px;
+}
+
+legend{
+    text-align: center;
+}
+fieldset
+{
+    border: none;
+    border-radius: 5px;
+    display: inline;
+    background-color:rgb(23, 195, 18);          
+    box-shadow: 1px 1px 1px 1px rgb(22, 17, 17);
+    padding: 25px 25px;
+    padding-left: 65px;
+}
+#country-label{
+    border-radius: 8px;
+    padding: 2px 2px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+#country{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 2px 2px;
+    width: 73px;
+}
+#submit{
+    border: 1px solid black;
+
+}
+body{
+     background-color: black;
+}
+form
+{
+    height: 50%;
+    padding: 4px 4px;
+    border-radius: 15px;
+}
+
+#new-login{
+    color: black;
+}
+#new-login>a{
+    color: white;
+}
+#new-login>a:hover{
+    color: rgb(0, 72, 12);
+}
+
+td,tr{
+    width: 220px;
+ 
+}
+form button{
+    border: 1px solid black;
+    background-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    /* background-color: rgb(0, 64, 255); */
+    padding: 5px 5px;
+    color: white;
+    width: 173px;
+}
+form button:hover{
+    color:rgb(166, 255, 0) ;
+}
+
