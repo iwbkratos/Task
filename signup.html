@@ -5,36 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./signup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
 </head>
 <body>
-    <div id="company-name"><h1>CompanyX</h1></div>
-    <div id="to-login">
-        <p id="new-login">Already having an account?<a href="login.html">Login</a></p>
-      </div>
+   <div id="company-name">CompanyX</div>
+   
     <div id="container">
         <div id="adjust">
-      <form id="form" action="./login.html">
+      <form id="form" action="" method="">
         <fieldset >
             <div id="signup">Signup</div>
        <table>
         
         <tr>
-          <td><input type="text" name="username" id="username" required placeholder="username/email" ><br><br></td>
+          <td><input type="text" name="email" id="email" required  placeholder="username/email" ><br><br></td>
         </tr>
         <tr>
             <td><input id="password" type="password" name="password" placeholder="password" required><br><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="male" id="male">Male <input type="radio" value="female" required>female   <br> <br></td>
+            <td><input type="radio" name="male" id="male">Male <input type="radio" value="female" required>Female   <br> <br></td>
         </tr>
         <tr>
-            <td><input type="text" placeholder="country" required><br><br></td>
+            <td><label id="country-label" for="country">select country</label>
+                <select name="country" id="country">
+                    <option value="India">India</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Spain">Spain</option>
+                    <option value="England">England</option>
+              </select><br><br></td>
         </tr>
         <tr>
             <td><input type="text" name="city" id="city" placeholder="city" required><br> <br></td>
         </tr>
         <tr >
             <td ><button type="submit">sign up</button></td>
+        </tr>
+        <tr>
+            <td id="login-page">
+                <p id="new-login">Already having an account?<a href="login.html">Login</a></p>
+            </td>
         </tr>
        </table>
     </fieldset>

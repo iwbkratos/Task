@@ -3,6 +3,52 @@ body{
     background-color: rgb(207, 210, 213);
 }
 nav{
+    margin: 0px;
+    border-radius: 10px;
+    background: rgb(23, 195, 18);
+    height:80px ;
+    width: 100%;
+    padding: 10px 10px;
+}
+nav span{
+    display: inline-block;
+    padding-top: 12px;
+}
+.logo
+{
+    color: white;
+    font-size: 35px;
+    font-family:"Audiowide", sans-serif;
+    line-height: 60px;
+    padding: 0px 30px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    padding-right: 200px;
+    word-spacing: 30px;
+    
+}
+nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0px 5px;
+}
+nav ul li a{
+    color: rgb(0, 0, 0);
+    font-size:15px ;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 13px;
+    border-radius: 9px;
+}
+nav ul li a:hover{
+    background: #ffffff;
+    transition: .3s;
+}
+
+#navbar{
     margin: 0;
     height: 80px;
     width: 100%;
@@ -10,25 +56,20 @@ nav{
     border-radius: 10px;
    width: 100%;
    padding-top: 10px;
-   box-shadow:1.5px 1.5px 5px rgb(196, 194, 194) ;
-   background-color: white;
 }
 #menu-container{
     width: 100%;
 }
 #menu{
     display: flex;
-    width: 50%;
+    width: 33%;
     height: 60px;
     border-radius: 100px;
-   
-     box-shadow: 0px 0px 1px rgba(199, 200, 202, 0.2), 0px 1px 5px 0.5px rgba(186, 186, 188, 0.79);
+    box-shadow: 0px 0px 1px rgba(199, 200, 202, 0.2), 0px 1px 5px 0.5px rgba(186, 186, 188, 0.79);
 }
 #dropmenu{
-    
     display: inline;
     width: 30%;
-    /* padding-left:10%; */
 }
 .dropdown>button *{
     font-size: medium;
@@ -44,18 +85,19 @@ nav{
     padding-top: 16.5px;
     padding-left: 15%;
 }
-
+#select-limit{
+    background-color:#ffffff;
+    box-shadow: 1px 1px 5px 1px rgb(190, 187, 187);
+}
 #count-limit{
     border: 1px solid rgb(209, 208, 208);
     border-radius: 5px;
-}
-
-#logout{
-    padding-left: 120%;
 
 }
+
 #logout>a{
-    text-decoration:underline;
+    text-decoration:none;
+    color: rgb(255, 255, 255);
 }
 #logout>a:hover{
     color: red;
@@ -133,12 +175,7 @@ input:hover{
     scale: 1.05;
     border-color: rgb(152, 150, 150);
 }
-nav>span{
 
-    padding-top: 10px;
-    z-index: 1;
-    padding-left: 50%;
-}
 
 .dropdown{
     padding: 18px 100px;
@@ -150,12 +187,13 @@ nav>span{
     width: 150px;
     height: 30px;
 }
-nav{
+#navbar{
     position: sticky;
     top: 3px;
     z-index: 1;
 }
 footer{
+    margin: 1px solid black;
     height: 60px;
     position: sticky;
     bottom: 3px;
@@ -191,7 +229,6 @@ footer>div>button:hover{
 }
 
 #pgno>span:hover{
-      box-shadow: 0px 2px 4px rgb(142, 140, 140);
-      background-color: black;
-      color: white;
+      background-color: rgb(203, 201, 201);
+      color:black;
 }

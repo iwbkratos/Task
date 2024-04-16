@@ -1,0 +1,93 @@
+
+#company-name{
+    background-color: #000000;
+    border: 2px solid rgb(23, 195, 18);
+    color: rgb(23, 195, 18);
+    font-size: 50px;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 20px 20px;
+    font-family:"Audiowide", sans-serif;
+    margin-top: -5px;
+}
+
+input{
+    border: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+fieldset{
+    display:inline;
+    padding: 30px 30px;
+    padding-left: 65px;
+    border: none;
+    background-color: rgba(42, 201, 34, 0.991);
+    box-shadow: 1px 1px 5px 1px rgba(24, 171, 216, 0.707);
+    border-radius: 15px;
+    justify-content: center;
+}
+fieldset:hover{
+    box-shadow: 1px 1px 5px 1px rgba(155, 19, 234, 0.707);
+
+}
+fieldset>h1{
+    margin-top: -15px;
+    padding-left: 48px;
+}
+
+form{
+    border-radius: 10px;
+    padding-left: 20px;
+    display: flex;
+}
+
+#container{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    line-height: 25px;
+}
+#adjust{
+    padding-top: 20px;
+}
+#box{
+    padding: 6px 6px 6px 6px;
+    width: 110%;
+    align-content: center;
+}
+input{
+    border: none;
+    border-radius: 3px;
+    padding: 5px 5px;
+}
+#new-signup>a{
+    color: rgb(255, 255, 255);
+}
+#new-signup>a:active{
+    color: red;
+}
+#new-signup>a:hover{
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+    background-color: rgba(42, 201, 34, 0.991);
+}
+form button{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #000000;
+    border-radius: 2px;
+    color: white;
+    padding: 5px 5px;
+    width: 173px;
+}
+
+form button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgba(42, 201, 34, 0.991);
+    scale: 1.01;
+}
+body{
+   background-color: black;
+}
