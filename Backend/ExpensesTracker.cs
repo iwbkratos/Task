@@ -95,7 +95,7 @@ namespace Task
         {
             while (true)
             {
-                Console.WriteLine("******************Expense Tractor**************");
+                Console.WriteLine("******************Expense Tractor**************\n");
                 Console.WriteLine(" Enter '1' to show your record \n Enter '2' to display all record \n Enter '3'  to delete a record \n Enter '4' to create a record \n Enter '5' to edit ");
                 Console.WriteLine("------------------------------------------------");
                 int operation = Convert.ToInt32(Console.ReadLine());
@@ -142,10 +142,7 @@ namespace Task
                 conn.Open();
                 Expenses expenses = new Expenses();
                 Console.WriteLine("Select the category id for your expense : ");
-                //Console.WriteLine("Enter Category id : ");
                 int cid = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Id : ");
-                int id = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter StartDate (yyyy-mm-dd): ");
                 string sdate = Console.ReadLine();
                 Console.WriteLine("Enter Enddate (yyyy-mm-dd): ");
@@ -156,7 +153,7 @@ namespace Task
                 string desc = Console.ReadLine();
                
 
-                expenses.Id = id;
+              
                 expenses.Start_date = sdate;
                 expenses.End_date = edate;
                 expenses.Amount = money;
@@ -164,13 +161,13 @@ namespace Task
                 expenses.Cid = cid;
                 if(expenses!=null)
                 {
-                    string insert = $"insert into Expenses values({expenses.Id},'{expenses.Start_date}','{expenses.End_date}',{expenses.Amount},'{expenses.Description}',{expenses.Cid})";
+                    string insert = $"insert into Expenses(Cid,StartDate,EndDate,Amount,Description) values({expenses.Cid},'{expenses.Start_date}','{expenses.End_date}',{expenses.Amount},'{expenses.Description}')";
                     SqlCommand cmd = new SqlCommand(insert, conn);
                   int row=  cmd.ExecuteNonQuery();
                     Console.WriteLine($"{row} row affected");
                     if (row > 0)
                     {
-                        Console.WriteLine("----Successfully Edited----");
+                        Console.WriteLine("----Successfully Created----");
                     }
                     else
                     {
@@ -206,7 +203,7 @@ namespace Task
                 int row= cmd.ExecuteNonQuery();
                 if (row > 0)
                 {
-                    Console.WriteLine("----Successfully Edited----");
+                    Console.WriteLine("----Successfully deleted----");
                 }
                 else
                 {
@@ -239,12 +236,12 @@ namespace Task
                 while (reader.Read())
                 {
                     Expenses expenses = new Expenses();
-                    expenses.Id = reader.GetInt32(0);
-                    expenses.Start_date = Convert.ToString(reader.GetDateTime(1));
-                    expenses.End_date = Convert.ToString(reader.GetDateTime(2));
-                    expenses.Amount = reader.GetDecimal(3);
-                    expenses.Description = reader.GetString(4);
-                    expenses.Cid = reader.GetInt32(5);
+                    expenses.Cid = reader.GetInt32(0);
+                    expenses.Id = reader.GetInt32(1);
+                    expenses.Start_date = Convert.ToString(reader.GetDateTime(2));
+                    expenses.End_date = Convert.ToString(reader.GetDateTime(3));
+                    expenses.Amount = reader.GetDecimal(4);
+                    expenses.Description = reader.GetString(5);
                     expensesList.Add(expenses);
                 }
 
@@ -259,9 +256,10 @@ namespace Task
                     foreach (var expense in group)
                     {
                         
-                        Console.Write($"    {expense.Id,-4}   {expense.Start_date,-11}    {expense.End_date,-12}    {expense.Amount,-12}    {expense.Description,-12}     {expense.Cid,-12}\n");
+                        Console.Write($"  {expense.Id}    {expense.Start_date,-11}    {expense.End_date,-12}    {expense.Amount,-12}    {expense.Description,-12}     \n");
                     }
                 }
+                Console.WriteLine();
             }
             catch (Exception e)
             { 
@@ -283,17 +281,18 @@ namespace Task
                 Expenses expenses = new Expenses();
                 while (reader.Read())
                 {
-                    expenses.Id = reader.GetInt32(0);
-                    expenses.Start_date = Convert.ToString(reader.GetDateTime(1));
-                    expenses.End_date = Convert.ToString(reader.GetDateTime(2));
-                    expenses.Amount = reader.GetDecimal(3);
-                    expenses.Description = reader.GetString(4);
-                    expenses.Cid = reader.GetInt32(5);
+                    expenses.Cid = reader.GetInt32(0);
+                    expenses.Id = reader.GetInt32(1);
+                    expenses.Start_date = Convert.ToString(reader.GetDateTime(2));
+                    expenses.End_date = Convert.ToString(reader.GetDateTime(3));
+                    expenses.Amount = reader.GetDecimal(4);
+                    expenses.Description = reader.GetString(5);
+                   
                 }
 
 
-                Console.WriteLine($"Expense-Id : {expenses.Id}, StartDate : {expenses.Start_date}, EndDate : {expenses.End_date}, Amount : {expenses.Amount}, Description : {expenses.Description}, CategoryID : {expenses.Cid})");
-                Console.WriteLine("------------------------------------------------");
+                Console.WriteLine($"Expense-Id : {expenses.Id}, StartDate : {expenses.Start_date}, EndDate : {expenses.End_date}, Amount : {expenses.Amount}, Description : {expenses.Description}\n");
+                Console.WriteLine("------------------------------------------------\n");
             }
             catch (Exception e)
             {
